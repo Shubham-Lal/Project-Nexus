@@ -1,9 +1,11 @@
 import "./style.css";
 
-export default function Signup() {
+const Signup = () => {
     return (
         <div id='signup'>
             Signup page
         </div>
     )
 }
+
+export default Signup
