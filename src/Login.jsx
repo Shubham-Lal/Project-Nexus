@@ -1,11 +1,10 @@
-import "./style.css";
+import "./Auth.css";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Lottie from "lottie-react";
-import Welcome from "../../lottie/Welcome.json";
+import Welcome from "./lottie/Welcome.json";
 import { IoMailOutline, IoFingerPrintOutline, IoEyeSharp, IoEyeOffSharp } from "react-icons/io5";
 import { FcGoogle } from "react-icons/fc";
-import { toast } from "sonner";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -13,12 +12,32 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [hidePassword, setHidePassword] = useState(false);
+    const [errors, setErrors] = useState({});
+
+    const validateForm = () => {
+        let isValid = true;
+        const errorsObj = {};
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !emailRegex.test(email)) {
+            errorsObj.email = "Please enter a valid email.";
+            isValid = false;
+        }
+        if (!password || password.length === 0) {
+            errorsObj.password = "Password should be aleast 1 character.";
+            isValid = false;
+        }
+
+        setErrors(errorsObj);
+        return isValid;
+    };
 
     const handleLoginSubmit = (e) => {
         e.preventDefault();
 
-        toast.success('Login successfull!');
-        navigate('/success-login');
+        if (validateForm()) {
+            navigate('/success?type=login');
+        }
     }
 
     return (
@@ -29,19 +48,19 @@ const Login = () => {
                 loop={true}
             />
 
-            <h1>Welcome Back,</h1>
+            <h1>Welcome Back</h1>
             <h2>Please login to your account</h2>
 
             <div className='input-container' style={{ marginTop: '30px' }}>
                 <IoMailOutline size={25} color='gray' />
                 <input
                     name='email'
-                    type='email'
                     placeholder='E-Mail'
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
             </div>
+            {errors.email && <span className="error">{errors.email}</span>}
 
             <div className='input-container' style={{ marginTop: '10px' }}>
                 <IoFingerPrintOutline size={25} color='gray' />
@@ -58,6 +77,7 @@ const Login = () => {
                     <IoEyeOffSharp size={20} cursor='pointer' onClick={() => setHidePassword(false)} />
                 )}
             </div>
+            {errors.password && <span className="error">{errors.password}</span>}
 
             <Link to='/login' className='forgot-password'>Forgot Password?</Link>
 
@@ -70,7 +90,7 @@ const Login = () => {
                 <p>Sign In with Google</p>
             </button>
 
-            <div className='new-here'>
+            <div className='alternative'>
                 <p>New here?</p>
                 <Link to='/signup' style={{ color: '#3c82f6' }}>Signup</Link>
             </div>
@@ -78,4 +98,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Login;

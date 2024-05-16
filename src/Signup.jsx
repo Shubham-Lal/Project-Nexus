@@ -1,11 +1,12 @@
-import "./style.css";
+import "./Auth.css";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Lottie from "lottie-react";
-import Welcome from "../../lottie/Welcome.json";
+import Welcome from "./lottie/Welcome.json";
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 import { IoPersonOutline, IoMailOutline, IoPhonePortraitOutline, IoFingerPrintOutline, IoEyeSharp, IoEyeOffSharp } from "react-icons/io5";
-import { toast } from "sonner";
-IoPersonOutline
+
 const Signup = () => {
     const navigate = useNavigate();
 
@@ -14,12 +15,40 @@ const Signup = () => {
     const [phoneNo, setPhoneNo] = useState('');
     const [password, setPassword] = useState('');
     const [hidePassword, setHidePassword] = useState(false);
+    const [errors, setErrors] = useState({});
+
+    const validateForm = () => {
+        let isValid = true;
+        const errorsObj = {};
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!fullName.trim()) {
+            errorsObj.fullName = "Name cannot be empty.";
+            isValid = false;
+        }
+        if (!email || !emailRegex.test(email)) {
+            errorsObj.email = "Please enter a valid email.";
+            isValid = false;
+        }
+        if (!phoneNo.trim()) {
+            errorsObj.phoneNo = "Phone number cannot be empty.";
+            isValid = false;
+        }
+        if (!password || password.length === 0) {
+            errorsObj.password = "Password should be aleast 1 character.";
+            isValid = false;
+        }
+
+        setErrors(errorsObj);
+        return isValid;
+    };
 
     const handleSignupSubmit = (e) => {
         e.preventDefault();
 
-        toast.success('Signup successfull!');
-        navigate('/success-register');
+        if (validateForm()) {
+            navigate('/success?type=signup');
+        }
     }
 
     return (
@@ -42,6 +71,7 @@ const Signup = () => {
                     onChange={e => setFullName(e.target.value)}
                 />
             </div>
+            {errors.fullName && <span className="error">{errors.fullName}</span>}
 
             <div className='input-container' style={{ marginTop: '10px' }}>
                 <IoMailOutline size={25} color='gray' />
@@ -49,20 +79,23 @@ const Signup = () => {
                     name='email'
                     type='email'
                     placeholder='E-Mail'
+                    autoComplete='on'
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
             </div>
+            {errors.email && <span className="error">{errors.email}</span>}
 
             <div className='input-container' style={{ marginTop: '10px' }}>
                 <IoPhonePortraitOutline size={25} color='gray' />
-                <input
-                    name='phone_no'
-                    placeholder='Phone No'
+                <PhoneInput
+                    country={'in'}
                     value={phoneNo}
-                    onChange={e => setPhoneNo(e.target.value)}
+                    onChange={phone => setPhoneNo(phone)}
+                    containerClass='phone-input'
                 />
             </div>
+            {errors.phoneNo && <span className="error">{errors.phoneNo}</span>}
 
             <div className='input-container' style={{ marginTop: '10px' }}>
                 <IoFingerPrintOutline size={25} color='gray' />
@@ -79,10 +112,16 @@ const Signup = () => {
                     <IoEyeOffSharp size={20} cursor='pointer' onClick={() => setHidePassword(false)} />
                 )}
             </div>
+            {errors.password && <span className="error">{errors.password}</span>}
 
             <button type='submit' className='submit-btn'>SIGNUP</button>
+
+            <div className='alternative'>
+                <p>Already have an account?</p>
+                <Link to='/login' style={{ color: '#3c82f6' }}>Login</Link>
+            </div>
         </form>
     )
 }
 
-export default Signup
+export default Signup;
