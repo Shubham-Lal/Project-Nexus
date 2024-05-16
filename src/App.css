@@ -140,6 +140,10 @@ ul {
     background-color: white;
   }
 
+  .hide-medium-device {
+    display: none !important;
+  }
+
   #home .welcome-modal {
     width: 450px;
     height: 90dvh;

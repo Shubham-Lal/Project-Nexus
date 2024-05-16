@@ -6,10 +6,6 @@
 }
 
 @media screen and (max-width: 800px) {
-    #home .welcome-modal .left {
-        display: none !important;
-    }
-
     #login {
         border-radius: 10px;
         height: 90dvh;

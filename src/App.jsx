@@ -11,7 +11,7 @@ function App() {
   return (
     <div id='home' className={location.pathname !== '/' ? 'yellow-bg' : 'white-bg'}>
       <div className='welcome-modal'>
-        <div className='left'>
+        <div className={`left ${location.pathname === '/' ? '' : 'hide-medium-device'}`}>
           <Lottie
             className='lottie-anim'
             animationData={Welcome}
