@@ -2,7 +2,7 @@ import "./style.css";
 
 export default function Login() {
     return (
-        <div id='home'>
+        <div id='login'>
             Login page
         </div>
     )

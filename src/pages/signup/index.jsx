@@ -2,7 +2,7 @@ import "./style.css";
 
 export default function Signup() {
     return (
-        <div id='home'>
+        <div id='signup'>
             Signup page
         </div>
     )
