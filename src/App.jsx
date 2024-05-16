@@ -22,14 +22,14 @@ function App() {
         <div className='right'>
           <Routes>
             <Route path='/' element={
-              <>
+              <div className='home'>
                 <h1>Auth Page</h1>
                 <h2>Project 1: Login & Signup Page</h2>
                 <div className='auth-btns'>
                   <Link to='/login'>LOGIN</Link>
                   <Link to='/signup'>SIGNUP</Link>
                 </div>
-              </>
+              </div>
             } />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />

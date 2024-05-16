@@ -52,7 +52,7 @@ const Signup = () => {
     }
 
     return (
-        <form onSubmit={handleSignupSubmit}>
+        <form onSubmit={handleSignupSubmit} className='signup-animation'>
             <Lottie
                 className='lottie-anim'
                 animationData={Welcome}

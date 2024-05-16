@@ -1,3 +1,39 @@
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.login-animation {
+    animation-name: slideInFromRight;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+.signup-animation {
+    animation-name: slideInFromLeft;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
 form {
     padding: 20px;
     width: 100%;
@@ -5,7 +41,6 @@ form {
     display: grid;
     place-content: center;
     background-color: white;
-    border-radius: 0 40px 40px 0;
 }
 
 form .lottie-anim {
@@ -14,6 +49,7 @@ form .lottie-anim {
 
 form h1 {
     width: 345px;
+    color: #ffe501;
 }
 
 form .input-container {
@@ -100,7 +136,6 @@ form .alternative {
 @media screen and (max-width: 800px) {
     form {
         height: 90dvh;
-        border-radius: 10px;
     }
 
     form .lottie-anim {

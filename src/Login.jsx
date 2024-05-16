@@ -41,7 +41,7 @@ const Login = () => {
     }
 
     return (
-        <form onSubmit={handleLoginSubmit}>
+        <form onSubmit={handleLoginSubmit} className='login-animation'>
             <Lottie
                 className='lottie-anim'
                 animationData={Welcome}
@@ -62,7 +62,8 @@ const Login = () => {
             </div>
             {errors.email && <span className="error">{errors.email}</span>}
 
-            <div className='input-container' style={{ marginTop: '10px' }}>
+            < div className='input-container' style={{ marginTop: '10px' }
+            }>
                 <IoFingerPrintOutline size={25} color='gray' />
                 <input
                     name='password'
@@ -71,15 +72,17 @@ const Login = () => {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                 />
-                {!hidePassword ? (
-                    <IoEyeSharp size={20} cursor='pointer' onClick={() => setHidePassword(true)} />
-                ) : (
-                    <IoEyeOffSharp size={20} cursor='pointer' onClick={() => setHidePassword(false)} />
-                )}
-            </div>
+                {
+                    !hidePassword ? (
+                        <IoEyeSharp size={20} cursor='pointer' onClick={() => setHidePassword(true)} />
+                    ) : (
+                        <IoEyeOffSharp size={20} cursor='pointer' onClick={() => setHidePassword(false)} />
+                    )
+                }
+            </div >
             {errors.password && <span className="error">{errors.password}</span>}
 
-            <Link to='/login' className='forgot-password'>Forgot Password?</Link>
+            < Link to='/login' className='forgot-password' > Forgot Password ?</Link >
 
             <button type='submit' className='submit-btn'>LOGIN</button>
 
@@ -94,7 +97,7 @@ const Login = () => {
                 <p>New here?</p>
                 <Link to='/signup' style={{ color: '#3c82f6' }}>Signup</Link>
             </div>
-        </form>
+        </form >
     )
 }
 
