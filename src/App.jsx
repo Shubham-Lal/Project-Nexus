@@ -13,7 +13,6 @@ function App() {
       <div className='welcome-modal'>
         <div className={`left ${location.pathname === '/' ? '' : 'hide-medium-device'}`}>
           <Lottie
-            className='lottie-anim'
             animationData={Welcome}
             loop={true}
           />

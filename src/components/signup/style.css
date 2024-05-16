@@ -7,13 +7,9 @@
 
 @media screen and (max-width: 800px) {
     #signup {
-        border-radius: 10px;
         height: 90dvh;
+        border-radius: 10px;
     }
 }
 
-@media screen and (max-width: 480px) {
-    #signup {
-        border-radius: 10px;
-    }
-}
+@media screen and (max-width: 480px) {}
