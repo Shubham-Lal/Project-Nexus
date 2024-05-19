@@ -40,7 +40,9 @@
 }
 
 footer {
+    margin-top: -1px;
     background-color: #F43B00;
+    border-top: 1px solid #F43B00;
 }
 
 footer .delivery-video {

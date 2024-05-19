@@ -1,0 +1,130 @@
+#auth {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#auth .auth-modal {
+    position: relative;
+    width: 90%;
+    max-width: 880px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #FFFFFF;
+    border: 2px solid #F43B00;
+    overflow: hidden;
+}
+
+#auth .auth-modal .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-content: center;
+    background-color: #F43B00;
+    color: #FFFFFF;
+    fill: #FFFFFF;
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+    overflow: hidden;
+}
+
+#auth .auth-modal .close-btn:hover {
+    transform: rotate(90deg);
+}
+
+#auth .auth-modal .left {
+    border-right: 2px solid #F43B00;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+}
+
+#auth .auth-modal .left img {
+    width: 100%;
+    object-fit: contain;
+}
+
+form {
+    height: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form h3 {
+    margin-bottom: 10px;
+    color: #F43B00;
+    font-family: "Fraunces", sans-serif;
+    font-size: 25px;
+    font-style: italic;
+}
+
+form h4 {
+    margin-bottom: 50px;
+    color: #F43B00;
+    font-size: 36px;
+    font-family: Staatliches, sans-serif;
+    font-weight: 400;
+    line-height: 38px;
+    text-transform: uppercase;
+}
+
+form input {
+    margin-bottom: 15px;
+    padding: 7px 27px 7px 0;
+    color: #F43B00;
+    font-family: 'Mooli', sans-serif;
+    font-size: 19px;
+    line-height: 26px;
+    border-bottom: 2px solid #F43B00;
+}
+
+form button {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    width: 150px;
+    height: 50px;
+    display: grid;
+    place-content: center;
+    background-color: #F43B00;
+    color: #FFFFFF;
+    font-family: "Mooli", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    border: 2px solid #F43B00;
+    transition: 0.15s ease-in-out;
+}
+
+form p {
+    color: #F43B00;
+    font-family: 'Mooli';
+}
+
+form p a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    #auth .auth-modal {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #auth .auth-modal .left {
+        display: none;
+    }
+
+    form {
+        padding: 40px;
+    }
+}

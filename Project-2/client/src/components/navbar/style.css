@@ -38,7 +38,8 @@ nav .links__container {
     gap: 20px;
 }
 
-nav .links__container a {
+nav .links__container a,
+nav .links__container button {
     width: 175px;
     height: 60px;
     display: grid;
@@ -61,15 +62,18 @@ nav .links__container a:first-child:hover {
     border-color: #F43B00;
 }
 
-nav .links__container a:last-child {
+nav .links__container a:last-child,
+nav .links__container button {
     color: #F43B00;
+    font-size: 17px;
     font-family: "Mooli", sans-serif;
     font-weight: 600;
     font-style: normal;
     border-color: #F43B00;
 }
 
-nav .links__container a:last-child:hover {
+nav .links__container a:last-child:hover,
+nav .links__container button:hover {
     background-color: #F43B00;
     color: white;
 }
