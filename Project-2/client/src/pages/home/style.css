@@ -1,0 +1,116 @@
+#home .hero {
+    padding-top: 225px;
+}
+
+#home .hero h1 {
+    margin: 0 auto;
+    width: fit-content;
+    color: #F43B00;
+    font-size: 150px;
+    font-family: "Fraunces", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+        "SOFT" 0,
+        "WONK" 0;
+}
+
+#home .hero h2 {
+    margin: 0 auto;
+    width: fit-content;
+    color: #F43B00;
+    font-size: 50px;
+    font-family: 'Staatliches', sans-serif;
+    text-align: center;
+}
+
+#home .hero .pizza-video {
+    margin: 0 auto;
+    padding: 50px 0;
+    width: 80%;
+    height: 80vh;
+}
+
+#home .hero .pizza-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 4px solid #F43B00;
+}
+
+footer {
+    background-color: #F43B00;
+}
+
+footer .delivery-video {
+    margin-top: 50px;
+    width: 100%;
+}
+
+footer .delivery-video video {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+}
+
+footer .bottom {
+    padding: 75px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+footer .bottom h3 {
+    color: #FFFFFF;
+    font-family: "Staatliches", sans-serif;
+    font-size: 110px;
+    line-height: 110px;
+    font-weight: 400;
+    text-align: center;
+}
+
+footer .bottom .login-btn {
+    width: 175px;
+    height: 60px;
+    display: grid;
+    place-content: center;
+    background-color: white;
+    color: #F43B00;
+    font-family: "Mooli", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    border: 2px solid #F43B00;
+    transition: 0.15s ease-in-out;
+}
+
+footer .bottom a:hover {
+    background-color: #F43B00;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+footer .bottom p {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+@media screen and (max-width: 768px) {
+    #home .hero h1 {
+        font-size: 100px;
+    }
+
+    #home .hero .pizza-video {
+        width: 100%;
+    }
+
+    footer .bottom h3 {
+        font-size: 55px;
+        line-height: 55px;
+    }
+}

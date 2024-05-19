@@ -9,6 +9,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     background-color: #FFFFFF;
+    z-index: 1;
 }
 
 nav h1 {
@@ -29,7 +30,6 @@ nav img {
     left: 44.3%;
     transform: translateX(-50%);
     width: 425px;
-    z-index: 1;
 }
 
 nav .links__container {
@@ -79,6 +79,7 @@ nav .links__container a:last-child:hover {
         height: auto;
         flex-direction: column;
         gap: 20px;
+        background-color: transparent;
     }
 
     nav h1 {
