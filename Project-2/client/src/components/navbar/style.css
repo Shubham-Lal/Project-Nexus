@@ -1,0 +1,91 @@
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 130px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+}
+
+nav h1 {
+    color: #F43B00;
+    font-size: 50px;
+    font-family: "Fraunces", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+        "SOFT" 0,
+        "WONK" 0;
+}
+
+nav img {
+    position: absolute;
+    top: -92px;
+    left: 44.3%;
+    transform: translateX(-50%);
+    width: 425px;
+    z-index: 1;
+}
+
+nav .links__container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav .links__container a {
+    width: 175px;
+    height: 60px;
+    display: grid;
+    place-content: center;
+    border: 2px solid transparent;
+    transition: 0.15s ease-in-out;
+}
+
+nav .links__container a:first-child {
+    background-color: #F43B00;
+    color: #FFFFFF;
+    font-family: "Mooli", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+nav .links__container a:first-child:hover {
+    background-color: white;
+    color: #F43B00;
+    border-color: #F43B00;
+}
+
+nav .links__container a:last-child {
+    color: #F43B00;
+    font-family: "Mooli", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    border-color: #F43B00;
+}
+
+nav .links__container a:last-child:hover {
+    background-color: #F43B00;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        height: auto;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav h1 {
+        padding-top: 20px;
+    }
+
+    nav img {
+        display: none;
+    }
+}
