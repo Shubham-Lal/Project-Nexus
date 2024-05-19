@@ -1,6 +1,7 @@
 import './style.css';
 import { Link } from 'react-router-dom';
 import Slider from '../../components/slider';
+import Gallery from '../../components/gallery';
 
 export default function Home() {
     return (
@@ -14,6 +15,8 @@ export default function Home() {
             </div>
 
             <Slider />
+
+            <Gallery />
 
             <footer>
                 <div className='delivery-video'>
