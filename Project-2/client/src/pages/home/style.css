@@ -125,3 +125,13 @@ footer .bottom p {
         height: calc(100dvh - 500px);
     }
 }
+
+@media screen and (max-width: 390px) {
+    #home .hero {
+        padding-top: 275px;
+    }
+
+    #home .hero h1 {
+        font-size: 75px;
+    }
+}

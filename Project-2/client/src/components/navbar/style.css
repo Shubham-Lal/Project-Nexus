@@ -94,3 +94,9 @@ nav .links__container button:hover {
         display: none;
     }
 }
+
+@media screen and (max-width: 390px) {
+    nav .links__container {
+        flex-direction: column;
+    }
+}

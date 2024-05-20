@@ -10,7 +10,9 @@ export default function Home() {
                 <h1>Pizzeria</h1>
                 <h2>Welcome to Original Italian Pizzeria</h2>
                 <div className='pizza-video'>
-                    <video src='/pizza.mp4' muted autoPlay loop></video>
+                    <video preload='auto' muted autoPlay loop>
+                        <source src='pizza.mp4' type='video/mp4' />
+                    </video>
                 </div>
             </div>
 
@@ -20,7 +22,9 @@ export default function Home() {
 
             <footer>
                 <div className='delivery-video'>
-                    <video src='/delivery.mp4' muted autoPlay loop></video>
+                    <video preload='auto' muted autoPlay loop>
+                        <source src='delivery.mp4' type='video/mp4' />
+                    </video>
                 </div>
                 <div className='bottom'>
                     <h3>PIZZERIA, MADE FOR EVERY PIZZA<br />LOVERS!</h3>
