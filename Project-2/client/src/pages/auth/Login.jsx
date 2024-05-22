@@ -6,6 +6,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     const [credentials, setCredentials] = useState({ email: '', password: '' });
+    const [loading, setLoading] = useState(false);
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -18,12 +19,12 @@ const Login = () => {
             return toast.error('Enter password to login');
         }
 
+        setLoading(true);
+
         try {
             const response = await fetch(`${import.meta.env.VITE_APP_SERVER_URL}/login`, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(credentials),
                 credentials: 'include'
             });
@@ -40,6 +41,7 @@ const Login = () => {
         } catch (error) {
             toast.error('An error occurred during login.');
         }
+        finally { setLoading(false) };
     }
 
     return (
@@ -58,7 +60,9 @@ const Login = () => {
                 value={credentials.password}
                 onChange={e => setCredentials({ ...credentials, password: e.target.value })}
             />
-            <button>LOGIN</button>
+            <button disabled={loading} className={loading ? 'loading' : ''}>
+                {loading ? 'LOGGING IN' : 'LOGIN'}
+            </button>
             <p>New here? <Link to='/signup'>Create Account</Link></p>
         </form>
     )

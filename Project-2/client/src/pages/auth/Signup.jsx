@@ -6,6 +6,7 @@ const Signup = () => {
     const navigate = useNavigate();
 
     const [credentials, setCredentials] = useState({ full_name: '', email: '', password: '' });
+    const [loading, setLoading] = useState(false);
 
     const handleSignup = async (e) => {
         e.preventDefault();
@@ -21,12 +22,12 @@ const Signup = () => {
             return toast.error('Password should be atleast 6 characters');
         }
 
+        setLoading(true);
+
         try {
             const response = await fetch(`${import.meta.env.VITE_APP_SERVER_URL}/signup`, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(credentials)
             });
 
@@ -34,6 +35,7 @@ const Signup = () => {
 
             if (response.ok) {
                 toast.success(data.message);
+                setCredentials({ full_name: '', email: '', password: '' })
                 navigate('/login');
             } else {
                 toast.error(data.message || 'An error occurred during signup');
@@ -41,6 +43,7 @@ const Signup = () => {
         } catch (error) {
             toast.error('An error occurred during signup');
         }
+        finally { setLoading(false) };
     }
 
     return (
@@ -65,7 +68,9 @@ const Signup = () => {
                 value={credentials.password}
                 onChange={e => setCredentials({ ...credentials, password: e.target.value })}
             />
-            <button>SIGNUP</button>
+            <button disabled={loading} className={loading ? 'loading' : ''}>
+                {loading ? 'SIGNING UP' : 'SIGNUP'}
+            </button>
             <p>Already have account? <Link to='/login'>Login</Link></p>
         </form>
     )

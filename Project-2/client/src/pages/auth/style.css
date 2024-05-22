@@ -106,6 +106,12 @@ form button {
     transition: 0.15s ease-in-out;
 }
 
+form button.loading {
+    background-color: white;
+    color: #F43B00;
+    cursor: wait;
+}
+
 form p {
     color: #F43B00;
     font-family: 'Mooli';
