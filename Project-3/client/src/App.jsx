@@ -8,7 +8,7 @@ function App() {
     <>
       <div className="top-banner">
         <div className="container">
-          <div className="small-bold-text banner-text">🥳 New to Usability Hub: Open and Closed card sorting</div>
+          <div className="small-bold-text banner-text">🥳 Get free ideas for your business growth and learn why a website is important for your business</div>
         </div>
       </div>
 
@@ -16,21 +16,25 @@ function App() {
       <nav>
         <div className="container main-nav flex">
           <a href="#" className="company-logo">
-            <img src="./assets/asset 1.png" alt="company logo" />
+            <img src="/logo-large.png" alt="company logo" />
           </a>
           <div className={`nav-links ${toggleNavbar ? 'active' : ''}`} id="nav-links">
             <ul className="flex">
-              <li><a href="#" className="hover-link">Products</a></li>
-              <li><a href="#" className="hover-link">Customer</a></li>
-              <li><a href="#" className="hover-link">Pricing</a></li>
-              <li><a href="#" className="hover-link">Resources</a></li>
+              <li><a href="#" className="hover-link">Home</a></li>
+              <li><a href="#" className="hover-link">About Us</a></li>
+              <li><a href="#" className="hover-link">Services</a></li>
+              <li><a href="#" className="hover-link">Contact Us</a></li>
               <li><a href="#" className="hover-link secondary-button">Sign in</a></li>
               <li><a href="#" className="hover-link primary-button">Sign up</a></li>
             </ul>
           </div>
-          <a href="#" className="nav-toggle hover-link" id="nav-toggle" onClick={() => setToggleNavbar(!toggleNavbar)}>
-            <i className="fa-solid fa-bars"></i>
-          </a>
+          <div className="nav-toggle hover-link" id="nav-toggle" onClick={() => setToggleNavbar(!toggleNavbar)}>
+            {toggleNavbar ? (
+              <img src="./assets/asset41.svg" width={18} height={18} alt="" />
+            ) : (
+              <img src="./assets/asset40.svg" width={18} height={18} alt="" />
+            )}
+          </div>
         </div>
       </nav>
 
@@ -38,12 +42,12 @@ function App() {
       <header>
         <div className="container header-section flex">
           <div className="header-left">
-            <h1>Design Confidently</h1>
-            <p>UsabilityHub is a remote user research platform that takes the guesswork out of design decisions by validating them with real users.</p>
+            <h1>Grow your Business with Nexus Info</h1>
+            <p>We develop websites for your business, bringing your vision to life and propelling your business into the digital realm.</p>
             <a href="#" className="primary-button get-started-btn">Get Started</a>
           </div>
           <div className="header-right">
-            <img src="./assets/asset 2.png" alt="hero image" />
+            <img src="./assets/asset2.png" alt="hero image" />
           </div>
         </div>
       </header>
@@ -51,15 +55,15 @@ function App() {
 
       <section className="companies-section">
         <div className="container">
-          <div className="small-bold-text companies-header">The world’s best companies rely on UsabilityHub to make better design decisions.</div>
+          <div className="small-bold-text companies-header">We approach every project with a carefully selected platform/technology and assign an appropriate team of designers, solutions specialists, developers, and testers. </div>
           <div className="logos flex">
-            <img className="logo" src="./assets/asset 3.png" alt="" />
-            <img className="logo" src="./assets/asset 4.png" alt="" />
-            <img className="logo" src="./assets/asset 5.png" alt="" />
-            <img className="logo" src="./assets/asset 6.png" alt="" />
-            <img className="logo" src="./assets/asset 7.png" alt="" />
-            <img className="logo" src="./assets/asset 8.svg" alt="" />
-            <img className="logo" src="./assets/asset 9.png" alt="" />
+            <img className="logo" src="./assets/asset3.png" alt="" />
+            <img className="logo" src="./assets/asset4.png" alt="" />
+            <img className="logo" src="./assets/asset5.png" alt="" />
+            <img className="logo" src="./assets/asset6.png" alt="" />
+            <img className="logo" src="./assets/asset7.png" alt="" />
+            <img className="logo" src="./assets/asset8.svg" alt="" />
+            <img className="logo" src="./assets/asset9.png" alt="" />
           </div>
         </div>
       </section>
@@ -68,42 +72,41 @@ function App() {
       <section className="features-section">
         <div className="container">
           <div className="features-header">
-            <h2 className="features-heading-text">Your user research Swiss Army knife</h2>
-            <a href="#" className="secondary-button">See all features <i className="fa-solid fa-right-long"></i></a>
+            <h2 className="features-heading-text">Glimpse of Our Services</h2>
           </div>
           <div className="features-area flex">
             <div className="features-card flex">
-              <img src="./assets/asset 11.svg" alt="" />
+              <img src="./assets/asset11.svg" alt="" />
               <h3>Card Sorting</h3>
               <p>Discover how people group and label information.</p>
               <a href="#" className="secondary-button">Learn More <i className="fa-solid fa-right-long"></i></a>
             </div>
             <div className="features-card flex">
-              <img src="./assets/asset 13.svg" alt="" />
+              <img src="./assets/asset13.svg" alt="" />
               <h3>Prototype tests</h3>
               <p>Discover how people navigate your Figma prototypes.</p>
               <a href="#" className="secondary-button">Learn more <i className="fa-solid fa-right-long"></i></a>
             </div>
             <div className="features-card flex">
-              <img src="./assets/asset 14.svg" alt="" />
+              <img src="./assets/asset14.svg" alt="" />
               <h3>First click tests</h3>
               <p>Test interaction with first click and navigation tests.</p>
               <a href="#" className="secondary-button">Learn more <i className="fa-solid fa-right-long"></i></a>
             </div>
             <div className="features-card flex">
-              <img src="./assets/asset 15.svg" alt="" />
+              <img src="./assets/asset15.svg" alt="" />
               <h3>Design surveys</h3>
               <p>Get feedback on images, videos or audio files.</p>
               <a href="#" className="secondary-button">Learn more <i className="fa-solid fa-right-long"></i></a>
             </div>
             <div className="features-card flex">
-              <img src="./assets/asset 16.svg" alt="" />
+              <img src="./assets/asset16.svg" alt="" />
               <h3>Preference tests</h3>
               <p>Find out which designs users prefer and why.</p>
               <a href="#" className="secondary-button">Learn more <i className="fa-solid fa-right-long"></i></a>
             </div>
             <div className="features-card flex">
-              <img src="./assets/asset 17.svg" alt="" />
+              <img src="./assets/asset17.svg" alt="" />
               <h3>Five second tests</h3>
               <p>Test comprehensibility by measuring first impressions.</p>
               <a href="#" className="secondary-button">Learn more <i className="fa-solid fa-right-long"></i></a>
@@ -116,7 +119,7 @@ function App() {
       <section className="big-feature-section">
         <div className="container flex big-feature-container">
           <div className="feature-img">
-            <img src="./assets/asset 18.png" alt="" />
+            <img src="./assets/asset18.png" alt="" />
           </div>
           <div className="feature-desc flex">
             <h4>Effortless validation for</h4>
@@ -130,7 +133,7 @@ function App() {
       <section className="big-feature-section">
         <div className="container flex big-feature-container" id="second-big-feature">
           <div className="feature-img">
-            <img src="./assets/asset 21.png" alt="" />
+            <img src="./assets/asset21.png" alt="" />
           </div>
           <div className="feature-desc flex">
             <h4>Effortless validation for</h4>
@@ -144,7 +147,7 @@ function App() {
       <section className="big-feature-section">
         <div className="container flex big-feature-container">
           <div className="feature-img">
-            <img src="./assets/asset 24.png" alt="" />
+            <img src="./assets/asset24.png" alt="" />
           </div>
           <div className="feature-desc flex">
             <h4>Effortless validation for</h4>
@@ -165,7 +168,7 @@ function App() {
             <a href="#" className="examples-card">
               <h3 className="card-text">Can user complete a task in my software interface?</h3>
             </a>
-            <a className="examples-card" href="#" style={{ background: 'linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.8)), url("./assets/asset\ 34.jpeg")', backgroundSize: 'cover' }}>
+            <a className="examples-card" href="#" style={{ background: 'linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.8)), url("./assets/asset34.jpeg")', backgroundSize: 'cover' }}>
               <h3 className="card-text">Can users find important pages on my website?</h3>
             </a>
             <a className="examples-card" href="#">
@@ -191,13 +194,12 @@ function App() {
       <footer>
         <div className="container flex footer-container">
           <a href="#" className="company-logo">
-            <img src="./assets/asset 1.png" alt="company logo" />
+            <img src="/logo-large.png" alt="company logo" />
           </a>
           <div className="link-column flex">
             <h4>Product</h4>
             <a href="#" className="hover-link">Overview</a>
             <a href="#" className="hover-link">Pricing</a>
-            <a href="#" className="hover-link">Usability Hub</a>
             <a href="#" className="hover-link">Customers Page</a>
             <a href="#" className="hover-link">Status Page</a>
           </div>
@@ -205,7 +207,6 @@ function App() {
             <h4>Methodology</h4>
             <a href="#" className="hover-link">Overview</a>
             <a href="#" className="hover-link">Pricing</a>
-            <a href="#" className="hover-link">Usability Hub</a>
             <a href="#" className="hover-link">Customers Page</a>
             <a href="#" className="hover-link">Status Page</a>
           </div>
@@ -213,7 +214,6 @@ function App() {
             <h4>Resources</h4>
             <a href="#" className="hover-link">Overview</a>
             <a href="#" className="hover-link">Pricing</a>
-            <a href="#" className="hover-link">Usability Hub</a>
             <a href="#" className="hover-link">Customers Page</a>
             <a href="#" className="hover-link">Status Page</a>
           </div>

@@ -8,10 +8,10 @@
 }
 
 :root {
-  --primary-text-color: #183b56;
+  --primary-text-color: #013220;
   --secondary-text-color: #577592;
-  --accent-color: #2294ed;
-  --accent-color-dark: #1d69a3;
+  --accent-color: #37c878;
+  --accent-color-dark: #BBBBBB;
   --padding-inline-section: 20px;
 }
 
@@ -104,8 +104,8 @@ ul {
 }
 
 .top-banner {
-  background-image: url('./assets/asset\ 30.png');
-  background-color: #4fb3d4;
+  background-image: url('./assets/asset30.png');
+  background-color: var(--accent-color);
   background-size: 300px;
 }
 
@@ -115,13 +115,18 @@ ul {
   text-align: center;
 }
 
-.main-nav {
-  margin-top: 20px;
-  justify-content: space-between;
+nav {
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: #FFF;
 }
 
-.company-logo img {
-  width: 200px;
+.main-nav {
+  justify-content: space-between;
 }
 
 .nav-links {
@@ -180,7 +185,7 @@ header {
 
 .features-section {
   padding: 80px var(--padding-inline-section) 0;
-  background-image: url(./assets/asset\ 32.svg);
+  background-image: url('./assets/asset32.svg');
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -254,7 +259,7 @@ header {
   position: relative;
   height: 300px;
   background: black;
-  background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.8)), url(./assets/asset\ 35.jpeg);
+  background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.8)), url('./assets/asset35.jpeg');
   background-size: cover;
   transition: 0.2s ease-out;
 }
@@ -264,12 +269,12 @@ header {
 }
 
 .examples-card:nth-child(3) {
-  background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.8)), url(./assets/asset\ 36.jpeg);
+  background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.8)), url('./assets/asset36.jpeg');
   background-size: cover;
 }
 
 .examples-card:nth-child(4) {
-  background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.8)), url(./assets/asset\ 37.jpeg);
+  background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.8)), url('./assets/asset37.jpeg');
   background-size: cover;
 }
 
@@ -289,8 +294,10 @@ header {
 }
 
 .cta-section {
-  padding: 120px var(--padding-inline-section) 80px;
-  background-color: #183b54;
+  padding: 80px 0;
+  background-image: url('./assets/asset30.png');
+  background-color: #000;
+  background-size: 300px;
 }
 
 .cta-section-container p {
@@ -333,6 +340,7 @@ footer {
   .nav-toggle {
     display: block;
     margin-right: 20px;
+    cursor: pointer;
   }
 
   .main-nav {
@@ -351,7 +359,6 @@ footer {
 
   .nav-links.active {
     left: 0;
-    top: 140px;
   }
 
   .nav-links ul {
@@ -373,10 +380,6 @@ footer {
 }
 
 @media screen and (max-width: 767px) {
-  .primary-button {
-    width: 100%;
-  }
-
   .header-section {
     flex-direction: column-reverse;
   }
