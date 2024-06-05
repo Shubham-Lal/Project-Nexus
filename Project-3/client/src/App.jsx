@@ -1,5 +1,6 @@
 import './App.css'
 import { useState } from 'react'
+import About from './About';
 
 function App() {
   const [toggleNavbar, setToggleNavbar] = useState(false);
@@ -20,12 +21,12 @@ function App() {
           </a>
           <div className={`nav-links ${toggleNavbar ? 'active' : ''}`} id="nav-links">
             <ul className="flex">
-              <li><a href="#" className="hover-link">Home</a></li>
-              <li><a href="#" className="hover-link">About Us</a></li>
-              <li><a href="#" className="hover-link">Services</a></li>
-              <li><a href="#" className="hover-link">Contact Us</a></li>
-              <li><a href="#" className="hover-link secondary-button">Sign in</a></li>
-              <li><a href="#" className="hover-link primary-button">Sign up</a></li>
+              <li><a href="#" className="hover-link" onClick={() => setToggleNavbar(false)}>Home</a></li>
+              <li><a href="#about" className="hover-link" onClick={() => setToggleNavbar(false)}>About Us</a></li>
+              <li><a href="#service" className="hover-link" onClick={() => setToggleNavbar(false)}>Services</a></li>
+              <li><a href="#contact" className="hover-link" onClick={() => setToggleNavbar(false)}>Contact Us</a></li>
+              <li><a href="#" className="hover-link secondary-button" onClick={() => setToggleNavbar(false)}>Sign in</a></li>
+              <li><a href="#" className="hover-link primary-button" onClick={() => setToggleNavbar(false)}>Sign up</a></li>
             </ul>
           </div>
           <div className="nav-toggle hover-link" id="nav-toggle" onClick={() => setToggleNavbar(!toggleNavbar)}>
@@ -53,7 +54,7 @@ function App() {
       </header>
 
 
-      <section className="companies-section">
+      <section className="companies-section" style={{ paddingTop: '80px' }}>
         <div className="container">
           <div className="small-bold-text companies-header">We approach every project with a carefully selected platform/technology and assign an appropriate team of designers, solutions specialists, developers, and testers. </div>
           <div className="logos flex">
@@ -68,8 +69,9 @@ function App() {
         </div>
       </section>
 
+      <About />
 
-      <section className="features-section">
+      <section className="features-section" id="service">
         <div className="container">
           <div className="features-header">
             <h2 className="features-heading-text">Glimpse of Our Services</h2>
@@ -187,6 +189,48 @@ function App() {
           <h2>Start testing today</h2>
           <p>Take the guesswork out of design decisions</p>
           <a href="#" className="primary-button">Get Started</a>
+        </div>
+      </section>
+
+      <section className="contact-us" id="contact">
+        <div className="screen">
+          <div className="screen-header">
+            <div className="screen-header-left">
+              <div className="screen-header-button close"></div>
+              <div className="screen-header-button maximize"></div>
+              <div className="screen-header-button minimize"></div>
+            </div>
+            <div className="screen-header-right">
+              <div className="screen-header-ellipsis"></div>
+              <div className="screen-header-ellipsis"></div>
+              <div className="screen-header-ellipsis"></div>
+            </div>
+          </div>
+          <div className="screen-body">
+            <div className="screen-body-item left">
+              <div className="app-title">
+                <span>CONTACT</span>
+                <span>US</span>
+              </div>
+              <div className="app-contact">CONTACT INFO : +62 81 314 928 595</div>
+            </div>
+            <div className="screen-body-item">
+              <div className="app-form">
+                <div className="app-form-group">
+                  <input className="app-form-control" placeholder="NAME" />
+                </div>
+                <div className="app-form-group">
+                  <input className="app-form-control" placeholder="EMAIL" />
+                </div>
+                <div className="app-form-group message">
+                  <input className="app-form-control" placeholder="MESSAGE" />
+                </div>
+                <div className="app-form-group buttons">
+                  <button className="app-form-button">SEND</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
