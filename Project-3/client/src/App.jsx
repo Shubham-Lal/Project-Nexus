@@ -1,44 +1,20 @@
 import './App.css'
-import { useState } from 'react'
+import { Toaster } from 'sonner';
+import Navbar from './Navbar';
 import About from './About';
+import Contact from './Contact';
+import Footer from './Footer';
 
 function App() {
-  const [toggleNavbar, setToggleNavbar] = useState(false);
-
   return (
     <>
-      <div className="top-banner">
-        <div className="container">
-          <div className="small-bold-text banner-text">🥳 Get free ideas for your business growth and learn why a website is important for your business</div>
-        </div>
-      </div>
+      <Toaster
+        duration={3000}
+        position='top-center'
+        richColors
+      />
 
-
-      <nav>
-        <div className="container main-nav flex">
-          <a href="#" className="company-logo">
-            <img src="/logo-large.png" alt="company logo" />
-          </a>
-          <div className={`nav-links ${toggleNavbar ? 'active' : ''}`} id="nav-links">
-            <ul className="flex">
-              <li><a href="#" className="hover-link" onClick={() => setToggleNavbar(false)}>Home</a></li>
-              <li><a href="#about" className="hover-link" onClick={() => setToggleNavbar(false)}>About Us</a></li>
-              <li><a href="#service" className="hover-link" onClick={() => setToggleNavbar(false)}>Services</a></li>
-              <li><a href="#contact" className="hover-link" onClick={() => setToggleNavbar(false)}>Contact Us</a></li>
-              <li><a href="#" className="hover-link secondary-button" onClick={() => setToggleNavbar(false)}>Sign in</a></li>
-              <li><a href="#" className="hover-link primary-button" onClick={() => setToggleNavbar(false)}>Sign up</a></li>
-            </ul>
-          </div>
-          <div className="nav-toggle hover-link" id="nav-toggle" onClick={() => setToggleNavbar(!toggleNavbar)}>
-            {toggleNavbar ? (
-              <img src="/assets/asset41.svg" width={18} height={18} alt="" />
-            ) : (
-              <img src="/assets/asset40.svg" width={18} height={18} alt="" />
-            )}
-          </div>
-        </div>
-      </nav>
-
+      <Navbar />
 
       <header>
         <div className="container header-section flex">
@@ -192,88 +168,9 @@ function App() {
         </div>
       </section>
 
-      <section className="contact-us" id="contact">
-        <div className="screen">
-          <div className="screen-header">
-            <div className="screen-header-left">
-              <div className="screen-header-button close"></div>
-              <div className="screen-header-button maximize"></div>
-              <div className="screen-header-button minimize"></div>
-            </div>
-            <div className="screen-header-right">
-              <div className="screen-header-ellipsis"></div>
-              <div className="screen-header-ellipsis"></div>
-              <div className="screen-header-ellipsis"></div>
-            </div>
-          </div>
-          <div className="screen-body">
-            <div className="screen-body-item left">
-              <div className="app-title">
-                <span>CONTACT</span>
-                <span>US</span>
-              </div>
-              <div className="app-contact">CONTACT INFO : +62 81 314 928 595</div>
-            </div>
-            <div className="screen-body-item">
-              <div className="app-form">
-                <div className="app-form-group">
-                  <input className="app-form-control" placeholder="NAME" />
-                </div>
-                <div className="app-form-group">
-                  <input className="app-form-control" placeholder="EMAIL" />
-                </div>
-                <div className="app-form-group message">
-                  <input className="app-form-control" placeholder="MESSAGE" />
-                </div>
-                <div className="app-form-group buttons">
-                  <button className="app-form-button">SEND</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Contact />
 
-
-      <footer>
-        <div className="container flex footer-container">
-          <a href="#" className="company-logo">
-            <img src="/logo-large.png" alt="company logo" />
-          </a>
-          <div className="link-column flex">
-            <h4>Product</h4>
-            <a href="#" className="hover-link">Overview</a>
-            <a href="#" className="hover-link">Pricing</a>
-            <a href="#" className="hover-link">Customers Page</a>
-            <a href="#" className="hover-link">Status Page</a>
-          </div>
-          <div className="link-column flex">
-            <h4>Methodology</h4>
-            <a href="#" className="hover-link">Overview</a>
-            <a href="#" className="hover-link">Pricing</a>
-            <a href="#" className="hover-link">Customers Page</a>
-            <a href="#" className="hover-link">Status Page</a>
-          </div>
-          <div className="link-column flex">
-            <h4>Resources</h4>
-            <a href="#" className="hover-link">Overview</a>
-            <a href="#" className="hover-link">Pricing</a>
-            <a href="#" className="hover-link">Customers Page</a>
-            <a href="#" className="hover-link">Status Page</a>
-          </div>
-        </div>
-      </footer>
-
-
-      <div className="subfooter">
-        <div className="container flex subfooter-container">
-          <a className="hover-link" href="#">Privacy policy</a>
-          <a className="hover-link" href="#">Terms & Condition</a>
-          <a className="hover-link" href="#">Security Information</a>
-          <a className="hover-link" href="#"><i className="fa-brands fa-facebook"></i></a>
-          <a className="hover-link" href="#"><i className="fa-brands fa-twitter"></i></a>
-        </div>
-      </div>
+      <Footer />
     </>
   )
 }
